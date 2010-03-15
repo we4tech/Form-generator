@@ -38,14 +38,14 @@ Capistrano::Configuration.instance.load do
   namespace :configuration do
     desc 'Create database configuration'
     task :mongrel do
-      run "cd #{current_path} && /usr/local/bin/mongrel_rails cluster::configure -c #{current_path} -e production -p 8000 -N 5"
+      run "cd #{current_path} && /usr/bin/mongrel_rails cluster::configure -c #{current_path} -e production -p 8300 -N 5"
     end
   end
 
   namespace :service do
     desc 'Mongrel cluster restart'
     task :mongrel_restart do
-      run "/usr/local/bin/mongrel_rails cluster::restart -C #{release_path}/config/mongrel_cluster.yml"
+      run "/usr/bin/mongrel_rails cluster::restart -C #{release_path}/config/mongrel_cluster.yml"
     end
   end
 

@@ -1,18 +1,18 @@
 require File.join(File.dirname(__FILE__), 'other_tasks')
 
-set :application, "form"
-set :repository,  "git://github.com/we4tech/restaurant-review.git"
+set :application, "form-generator"
+set :repository,  "git://github.com/we4tech/Form-generator.git"
 
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
 set :use_sudo, false
 
-role :web, "welltreat.us:2212", :user => 'restaurantreview'                          # Your HTTP server, Apache/etc
-role :app, "welltreat.us:2212", :user => 'restaurantreview'                          # This may be the same as your `Web` server
-role :db,  "welltreat.us:2212", :user => 'restaurantreview', :primary => true # This is where Rails migrations will run
+role :web, "review.codesymmetry.com:2212", :user => 'form'                          # Your HTTP server, Apache/etc
+role :app, "review.codesymmetry.com:2212", :user => 'form'                          # This may be the same as your `Web` server
+role :db,  "review.codesymmetry.com:2212", :user => 'form', :primary => true # This is where Rails migrations will run
 
-set :deploy_to, "/home/restaurantreview/"
+set :deploy_to, "/home/form/"
 
 # If you are using Passenger mod_rails uncomment this:
 # if you're still using the script/reapear helper you will need
